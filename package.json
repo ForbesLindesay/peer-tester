@@ -1,0 +1,55 @@
+{
+  "name": "peer-tester",
+  "version": "0.0.0",
+  "bin": {
+    "peer-tester": "./cli.js"
+  },
+  "main": "lib/index.js",
+  "description": "Test a project with every valid peer dependency",
+  "keywords": [],
+  "files": [
+    "lib/",
+    "cli.js"
+  ],
+  "dependencies": {
+    "babel-runtime": "^6.18.0",
+    "chalk": "^1.1.3",
+    "cross-spawn": "^5.1.0",
+    "lsr": "^1.0.0",
+    "npm-registry-client": "^8.1.1",
+    "rimraf": "^2.6.1",
+    "semver": "^5.3.0",
+    "then-fs": "^2.0.0",
+    "yargs": "^7.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-jest": "*",
+    "babel-preset-forbeslindesay": "*",
+    "eslint": "*",
+    "eslint-config-forbeslindesay": "*",
+    "jest": "*"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel src --out-dir lib",
+    "lint": "eslint src",
+    "test": "jest ./src/** --coverage && npm run lint",
+    "watch": "jest ./src/** --coverage --watch"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "snapshotSerializers": [
+      "./scripts/buffer-serializer.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForbesLindesay/peer-tester.git"
+  },
+  "author": {
+    "name": "Forbes Lindesay",
+    "url": "http://github.com/ForbesLindesay"
+  },
+  "license": "MIT"
+}

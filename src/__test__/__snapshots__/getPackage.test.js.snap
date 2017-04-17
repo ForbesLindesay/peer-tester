@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getPackage(readFolder(exampleDir)) 1`] = `
+Object {
+  "name": "example",
+  "peerDependencies": Object {
+    "promise": "^6.0.0",
+  },
+  "private": true,
+  "scripts": Object {
+    "test": "node test",
+  },
+}
+`;

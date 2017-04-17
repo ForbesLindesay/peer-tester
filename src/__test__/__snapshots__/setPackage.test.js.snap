@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setPackage(readFolder(exampleDir), {"hello": "world"}) 1`] = `
+Array [
+  Object {
+    "content": Buffer("{
+  \\"hello\\": \\"world\\"
+}"),
+    "path": "./package.json",
+    "type": "file",
+  },
+  Object {
+    "path": "./test",
+    "type": "directory",
+  },
+  Object {
+    "content": Buffer("console.log('promise version v' + require('promise/package.json').version);
+if (require('promise/package.json').version === '6.0.1') {
+  console.log('Simulating faield test for v6.0.1');
+  process.exit(1);
+}
+"),
+    "path": "./test/index.js",
+    "type": "file",
+  },
+]
+`;

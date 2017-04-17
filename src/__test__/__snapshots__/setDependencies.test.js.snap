@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setDependencies({"peerDependencies": {"react": "^0.14.0"}, "devDependencies": {"react": "^0.14.0"}}, {"react": "0.14.0"}) 1`] = `
+Object {
+  "devDependencies": Object {
+    "react": "0.14.0",
+  },
+  "peerDependencies": Object {
+    "react": "0.14.0",
+  },
+}
+`;

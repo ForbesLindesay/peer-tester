@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getPeerDependencyMatrix({"promise": "^6.0.0", "then-request": "^1.0.0"}) 1`] = `
+Array [
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.0",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.0",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.0",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.1",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.1",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.1",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.2",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.2",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.2",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.3",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.3",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.3",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.4",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.4",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.4",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.0.5",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.0.5",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.0.5",
+  },
+  Object {
+    "promise": "6.0.0",
+    "then-request": "1.1.0",
+  },
+  Object {
+    "promise": "6.0.1",
+    "then-request": "1.1.0",
+  },
+  Object {
+    "promise": "6.1.0",
+    "then-request": "1.1.0",
+  },
+]
+`;
