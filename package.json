@@ -40,7 +40,8 @@
   "jest": {
     "testEnvironment": "node",
     "snapshotSerializers": [
-      "./scripts/buffer-serializer.js"
+      "./scripts/buffer-serializer.js",
+      "./scripts/filename-serializer.js"
     ]
   },
   "repository": {
