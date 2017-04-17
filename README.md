@@ -1,5 +1,7 @@
 # peer-tester
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/peer-tester.svg)](https://greenkeeper.io/)
+
 Test a project with every valid peer dependency.
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/peer-tester/master.svg)](https://travis-ci.org/ForbesLindesay/peer-tester)
