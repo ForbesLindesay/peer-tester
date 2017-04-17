@@ -9,7 +9,7 @@ Test a project with every valid peer dependency.
 ## Installation
 
 ```
-npm install peer-tester --save
+npm install peer-tester --save-dev
 ```
 
 ## Usage
