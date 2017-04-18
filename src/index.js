@@ -3,6 +3,7 @@ import Promise from 'promise';
 import rimraf from 'rimraf';
 import {mkdir} from 'graceful-fs';
 import chalk from 'chalk';
+import throat from 'throat';
 import getPackage from './getPackage';
 import getPeerDependencyMatrix from './getPeerDependencyMatrix';
 import readFolder from './readFolder';
@@ -43,7 +44,7 @@ async function runTestScript(dirname, options = {}) {
   })
   let exitCode = 0;
   await Promise.all(
-    suites.map(async ({name, dirname, dependencies}) => {
+    suites.map(throat(3, async ({name, dirname, dependencies}) => {
       log('Installing ' + name);
       await mk(dirname);
       await writeFolder(
@@ -63,13 +64,13 @@ async function runTestScript(dirname, options = {}) {
         log(output.toString('utf8').trim());
         exitCode = status;
       }
-    }),
+    })),
   );
   if (exitCode) {
     return exitCode;
   }
   const results = await Promise.all(
-    suites.map(async ({name, dirname, dependencies}) => {
+    suites.map(throat(3, async ({name, dirname, dependencies}) => {
       log('Testing ' + name);
       const {status, output} = await runCommand(
         'npm',
@@ -85,7 +86,7 @@ async function runTestScript(dirname, options = {}) {
         status,
         output,
       };
-    }),
+    })),
   );
 
   results.forEach(result => {
