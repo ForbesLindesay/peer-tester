@@ -1,5 +1,9 @@
+import Promise from 'promise';
 import lsr from 'lsr';
-import {readFile} from 'then-fs';
+import {readFile} from 'graceful-fs';
+import throat from 'throat';
+
+const rf = throat(10, Promise.denodeify(readFile));
 
 async function readFolder(dirname) {
   const entries = await lsr(dirname);
@@ -9,7 +13,7 @@ async function readFolder(dirname) {
         return {
           type: 'file',
           path: entry.path,
-          content: await readFile(entry.fullPath),
+          content: await rf(entry.fullPath),
         };
       } else {
         return {

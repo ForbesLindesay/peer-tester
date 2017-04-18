@@ -1,6 +1,7 @@
 import {resolve} from 'path';
-import {sync as rimraf} from 'rimraf';
-import {mkdir} from 'then-fs';
+import Promise from 'promise';
+import rimraf from 'rimraf';
+import {mkdir} from 'graceful-fs';
 import chalk from 'chalk';
 import getPackage from './getPackage';
 import getPeerDependencyMatrix from './getPeerDependencyMatrix';
@@ -9,6 +10,9 @@ import runCommand from './runCommand';
 import setDependencies from './setDependencies';
 import setPackage from './setPackage';
 import writeFolder from './writeFolder';
+
+const rm = Promise.denodeify(rimraf);
+const mk = Promise.denodeify(mkdir);
 
 async function runTestScript(dirname, options = {}) {
   function log(message, color) {
@@ -19,8 +23,8 @@ async function runTestScript(dirname, options = {}) {
     }
   }
   const tempdir = resolve(dirname, '../.peer-tester');
-  rimraf(tempdir);
-  await mkdir(tempdir);
+  await rm(tempdir);
+  await mk(tempdir);
   const entries = await readFolder(dirname);
   const pkg = getPackage(entries);
   if (!pkg.peerDependencies) {
@@ -41,7 +45,7 @@ async function runTestScript(dirname, options = {}) {
   await Promise.all(
     suites.map(async ({name, dirname, dependencies}) => {
       log('Installing ' + name);
-      await mkdir(dirname);
+      await mk(dirname);
       await writeFolder(
         dirname,
         setPackage(entries, setDependencies(pkg, dependencies)),
@@ -96,7 +100,7 @@ async function runTestScript(dirname, options = {}) {
       }
     }
   });
-  rimraf(tempdir);
+  await rm(tempdir);
   if (!options.logAllResults && !exitCode) {
     log('All tests passed!', 'green');
   }
