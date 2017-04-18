@@ -6,7 +6,9 @@ import throat from 'throat';
 const rf = throat(10, Promise.denodeify(readFile));
 
 async function readFolder(dirname) {
-  const entries = await lsr(dirname);
+  const entries = await lsr(dirname, {
+    filter: entry => entry.name !== 'node_modules',
+  });
   return Promise.all(
     entries.map(async (entry) => {
       if (entry.isFile()) {
