@@ -34,12 +34,12 @@ async function runTestScript(dirname, options = {}) {
   const matrix = await getPeerDependencyMatrix(pkg.peerDependencies);
   const suites = matrix.map(dependencies => {
     const name = Object.keys(dependencies).map(name => {
-      return name + ': ' + dependencies[name];
+      return name + '@' + dependencies[name];
     }).join(', ');
     const key = Object.keys(dependencies).map(name => {
       return name + '_v' + dependencies[name];
     }).join('_');
-    const dirname = tempdir + '/' + key;
+    const dirname = tempdir + '/' + key + '/';
     return {name, key, dirname, dependencies};
   })
   let exitCode = 0;
