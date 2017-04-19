@@ -23,7 +23,7 @@ async function runTestScript(dirname, options = {}) {
       console.log((options.color !== false && color) ? chalk[color](message) : message);
     }
   }
-  const tempdir = resolve(dirname, '../.peer-tester');
+  const tempdir = resolve(dirname, '../temp-folder-for-peer-tester');
   await rm(tempdir);
   await mk(tempdir);
   const entries = await readFolder(dirname);
