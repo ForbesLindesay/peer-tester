@@ -7,7 +7,7 @@ const rf = throat(10, Promise.denodeify(readFile));
 
 async function readFolder(dirname) {
   const entries = await lsr(dirname, {
-    filter: entry => entry.name !== 'node_modules',
+    filter: entry => entry.name !== 'node_modules' && entry.name !== '.git',
   });
   return Promise.all(
     entries.map(async (entry) => {
