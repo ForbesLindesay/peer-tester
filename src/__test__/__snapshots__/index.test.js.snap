@@ -9,7 +9,7 @@ Testing promise@6.0.1
 Testing promise@6.1.0
 
 Failed promise@6.0.1
-> example@ test <cwd>/.peer-tester/promise_v6.0.1
+> example@ test <cwd>/temp-folder-for-peer-tester/promise_v6.0.1
 > node test
 
 promise version v6.0.1
@@ -27,7 +27,7 @@ Testing promise@6.0.1
 Testing promise@6.1.0
 [31m
 Failed promise@6.0.1[39m
-> example@ test <cwd>/.peer-tester/promise_v6.0.1
+> example@ test <cwd>/temp-folder-for-peer-tester/promise_v6.0.1
 > node test
 
 promise version v6.0.1
@@ -45,13 +45,13 @@ Testing promise@6.0.1
 Testing promise@6.1.0
 
 Succeeded promise@6.0.0
-> example@ test <cwd>/.peer-tester/promise_v6.0.0
+> example@ test <cwd>/temp-folder-for-peer-tester/promise_v6.0.0
 > node test
 
 promise version v6.0.0
 
 Failed promise@6.0.1
-> example@ test <cwd>/.peer-tester/promise_v6.0.1
+> example@ test <cwd>/temp-folder-for-peer-tester/promise_v6.0.1
 > node test
 
 promise version v6.0.1
@@ -59,7 +59,7 @@ Simulating faield test for v6.0.1
 npm ERR! Test failed.  See above for more details.
 
 Succeeded promise@6.1.0
-> example@ test <cwd>/.peer-tester/promise_v6.1.0
+> example@ test <cwd>/temp-folder-for-peer-tester/promise_v6.1.0
 > node test
 
 promise version v6.1.0
