@@ -1,6 +1,6 @@
 {
   "name": "peer-tester",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "bin": {
     "peer-tester": "./cli.js"
   },
